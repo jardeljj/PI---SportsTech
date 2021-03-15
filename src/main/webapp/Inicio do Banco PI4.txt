@@ -1,0 +1,38 @@
+		--- Cadastro de Clientes ---
+
+nome	
+CPF
+Data de Nascimento
+Celular
+Email
+Senha
+CEP
+
+
+		--- Produtos ---
+Tamanho
+Cor
+Marca
+Preço
+
+
+create table CadastroCli(
+id int auto_increment,
+Nome varchar(50) not null,
+CPF varchar(15) not null,
+dtNascimento date,
+Celular int(11),
+email varchar(50) not null,
+senha varchar(15) not null,
+CEP Int(9) not null,
+primary key(id)
+);
+
+Create table Produto(
+id int auto_increment,
+Tamanho Varchar(5) not null,
+Cor varchar(10) not null,
+Marca varchar(20) not null,
+Preço double not null,
+primary key(id)
+);
