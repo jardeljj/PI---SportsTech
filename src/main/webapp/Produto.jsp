@@ -84,18 +84,20 @@
                             <th>Qnt Produto</th>
                             <th>Avaliação</th>
                             <th>Ações</th>
+                            <th>Tarefas</th>
                             </thead>
                             <tbody>
-                                <c:forEach var="produto" items="${produtos}">
-                                    <tr>
-                                        <td><c:out value="${produto.nome}" /></td>
-                                        <td><c:out value="${produto.marca}" /></td>
-                                        <td><c:out value="${pruduto.cor}" /></td>
-                                        <td><c:out value="${prdouto.qtdProduto}" /></td>
-                                        <td><c:out value="${prdouto.avaliacao}" /></td>
-                                        <td><a href="UserController?action=edit&userId=<c:out value="${produto.nome}"/>">Update</a></td>
-                                        <td><a href="UserController?action=delete&userId=<c:out value="${produto.nomr}"/>">Delete</a></td>
+                            <c:forEach var="produto" items="${produtos}">
+                                <tr>
+                                    <td><c:out value="${produto.Nome}" /></td>
+                                <td><c:out value="${produto.Marca}" /></td>
+                                <td><c:out value="${produto.Cor}" /></td>
+                                <td><c:out value="${produto.QtdProduto}" /></td>
+                                <td><c:out value="${produto.Avaliacao}" /></td>
                                 <a href="Alterar_Produto.jsp" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                                <td><a href="ProdutoController?action=edit&nome="<c:out value="${produto.nome}"/>">Update</a></td>
+                                <td><a href="ProdutoController?action=delete&nome="<c:out value="${produto.nome}"/>">Delete</a></td>
+
                                 </td>
                                 </tr>
                             </c:forEach>

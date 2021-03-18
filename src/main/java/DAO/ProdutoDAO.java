@@ -39,6 +39,7 @@ public class ProdutoDAO {
             preparedStatement.setInt(6, produto.getQtdProduto());
             preparedStatement.setDouble(7, produto.getAvaliacao());
             preparedStatement.setString(8, produto.getDescricao());
+            preparedStatement.execute();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -71,7 +72,7 @@ public class ProdutoDAO {
             preparedStatement.setInt(6, produto.getQtdProduto());
             preparedStatement.setDouble(7, produto.getAvaliacao());
             preparedStatement.setString(8, produto.getDescricao());
-
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -93,6 +94,7 @@ public class ProdutoDAO {
                 produto.setAvaliacao(rs.getDouble("Avaliacao"));
                 produto.setDescricao(rs.getString("Descricao"));
                 listaDeProduto.add(produto);
+                
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -104,7 +106,7 @@ public class ProdutoDAO {
     public Produto getUserById(String Nome) {
         Produto produto = new Produto();
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("select * from users where userid=?");
+            PreparedStatement preparedStatement = connection.prepareStatement("select * from produto where nome=?");
             preparedStatement.setString(1, Nome);
             ResultSet rs = preparedStatement.executeQuery();
 
@@ -114,7 +116,7 @@ public class ProdutoDAO {
                 produto.setTamanho(rs.getString("Tamanho"));
                 produto.setCor(rs.getString("Cor"));
                 produto.setPreco(rs.getDouble("Preço"));
-                produto.setQtdProduto(rs.getInt("QtnProduto"));
+                produto.setQtdProduto(rs.getInt("QtdProduto"));
                 produto.setAvaliacao(rs.getDouble("Avaliacao"));
                 produto.setDescricao(rs.getString("Descricao"));
             }
