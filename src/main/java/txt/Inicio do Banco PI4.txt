@@ -30,9 +30,12 @@ primary key(id)
 
 Create table Produto(
 id int auto_increment,
+Nome varchar(50) not null,
+Marca varchar(25) not null,
 Tamanho Varchar(5) not null,
 Cor varchar(10) not null,
-Marca varchar(20) not null,
 Preço double not null,
-primary key(id)
-);
+QntProduto int not null,
+Avaliacao double not null,
+Descricao varchar(500) not null,
+primary key(id);

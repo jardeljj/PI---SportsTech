@@ -29,7 +29,7 @@ public class BD {
                 String user = "root";
                 String password = "";
                 Class.forName("com.mysql.jdbc.Driver");
-                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Pi-4", user, password);
+                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pi_4", user, password);
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             } catch (SQLException e) {
