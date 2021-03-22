@@ -45,12 +45,12 @@ public class ProdutoDAO {
         }
     }
 
-    public void deleteProduto(String nome) {
+    public void deleteProduto(int id) {
         try {
             PreparedStatement preparedStatement = connection
-                    .prepareStatement("delete from produto where Nome=?");
+                    .prepareStatement("delete from produto where id=?");
             // Parameters start with 1
-            preparedStatement.setString(1, nome);
+            preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
 
         } catch (SQLException e) {

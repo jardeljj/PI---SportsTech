@@ -39,15 +39,15 @@ public class ProdutoController extends HttpServlet {
         String action = request.getParameter("action");
 
         if (action.equalsIgnoreCase("delete")) {
-            String nome = request.getParameter("nome");
-            dao.deleteProduto(nome);
+            int id = Integer.parseInt(request.getParameter("id"));
+            dao.deleteProduto(id);
             forward = LIST_PRODUTO;
             request.setAttribute("nome", dao.getAllProdutos());
         } else if (action.equalsIgnoreCase("edit")) {
             forward = INSERT_OR_EDIT;
             int id = Integer.parseInt(request.getParameter("id"));
             Produto produto = dao.getUserById(id);
-            request.setAttribute("nome", id);
+            request.setAttribute("nome", produto);
         } else if (action.equalsIgnoreCase("listProduto")) {
             forward = LIST_PRODUTO;
             request.setAttribute("produtos", dao.getAllProdutos());
