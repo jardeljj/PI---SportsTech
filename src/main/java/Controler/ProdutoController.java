@@ -71,11 +71,11 @@ public class ProdutoController extends HttpServlet {
         produto.setQtdProduto(Integer.parseInt(request.getParameter("QtnProduto")));
         produto.setAvaliacao(Double.parseDouble(request.getParameter("Avaliacao")));
         produto.setDescricao(request.getParameter("Descricao"));
-        String Nome = request.getParameter("Nome");
-        if (Nome == null || Nome.isEmpty()) {
+        String id = request.getParameter("id");
+        if (id == null || id.isEmpty()) {
             dao.addProduto(produto);
         } else {
-            produto.setNome(request.getParameter("Nome"));
+            produto.setId(Integer.parseInt(id));
             dao.updateProduto(produto);
         }
         RequestDispatcher view = request.getRequestDispatcher(LIST_PRODUTO);
