@@ -62,7 +62,7 @@ public class ProdutoDAO {
         try {
             PreparedStatement preparedStatement = connection
                     .prepareStatement("update produto set Nome=?, Marca=?, Tamanho=?, Cor=?, Preço=?, QntProduto=?, Avaliacao=?, Descricao=?"
-                            + "where Nome=?");
+                            + "where id=?");
             // Parameters start with 1
             preparedStatement.setString(1, produto.getNome());
             preparedStatement.setString(2, produto.getMarca());
@@ -72,6 +72,7 @@ public class ProdutoDAO {
             preparedStatement.setInt(6, produto.getQtdProduto());
             preparedStatement.setDouble(7, produto.getAvaliacao());
             preparedStatement.setString(8, produto.getDescricao());
+            preparedStatement.setInt(1, produto.getId());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -82,7 +83,7 @@ public class ProdutoDAO {
         List<Produto> listaDeProduto = new ArrayList<Produto>();
         try {
             Statement stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery("select * from produtos");
+            ResultSet rs = stmt.executeQuery("select * from produto");
             while (rs.next()) {
                 Produto produto = new Produto();
                 produto.setNome(rs.getString("Nome"));
@@ -103,14 +104,15 @@ public class ProdutoDAO {
         return listaDeProduto;
     }
 
-    public Produto getUserById(String Nome) {
+    public Produto getUserById(int id) {
         Produto produto = new Produto();
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("select * from produto where nome=?");
-            preparedStatement.setString(1, Nome);
+            PreparedStatement preparedStatement = connection.prepareStatement("select * from produto where id=?");
+            preparedStatement.setInt(1, id);
             ResultSet rs = preparedStatement.executeQuery();
 
             if (rs.next()) {
+                produto.setId(rs.getInt("id"));
                 produto.setNome(rs.getString("Nome"));
                 produto.setMarca(rs.getString("Marca"));
                 produto.setTamanho(rs.getString("Tamanho"));

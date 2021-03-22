@@ -11,6 +11,7 @@ package model;
  */
 public class Produto {
     
+    private int id;
     private String nome;
     private String marca;
     private String tamanho;
@@ -20,6 +21,14 @@ public class Produto {
     private double avaliacao;
     private String descricao;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     public String getNome() {
         return nome;
     }

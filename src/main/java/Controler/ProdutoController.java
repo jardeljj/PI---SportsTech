@@ -45,9 +45,9 @@ public class ProdutoController extends HttpServlet {
             request.setAttribute("nome", dao.getAllProdutos());
         } else if (action.equalsIgnoreCase("edit")) {
             forward = INSERT_OR_EDIT;
-            String nome = request.getParameter("nome");
-            Produto produto = dao.getUserById(nome);
-            request.setAttribute("nome", nome);
+            int id = Integer.parseInt(request.getParameter("id"));
+            Produto produto = dao.getUserById(id);
+            request.setAttribute("nome", id);
         } else if (action.equalsIgnoreCase("listProduto")) {
             forward = LIST_PRODUTO;
             request.setAttribute("produtos", dao.getAllProdutos());
