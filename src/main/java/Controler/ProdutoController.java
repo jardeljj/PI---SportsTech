@@ -39,15 +39,15 @@ public class ProdutoController extends HttpServlet {
         String action = request.getParameter("action");
 
         if (action.equalsIgnoreCase("delete")) {
-            String nome = request.getParameter("nome");
-            dao.deleteProduto(nome);
+            int id = Integer.parseInt(request.getParameter("id"));
+            dao.deleteProduto(id);
             forward = LIST_PRODUTO;
             request.setAttribute("nome", dao.getAllProdutos());
         } else if (action.equalsIgnoreCase("edit")) {
             forward = INSERT_OR_EDIT;
-            String nome = request.getParameter("nome");
-            Produto produto = dao.getUserById(nome);
-            request.setAttribute("nome", nome);
+            int id = Integer.parseInt(request.getParameter("id"));
+            Produto produto = dao.getUserById(id);
+            request.setAttribute("nome", produto);
         } else if (action.equalsIgnoreCase("listProduto")) {
             forward = LIST_PRODUTO;
             request.setAttribute("produtos", dao.getAllProdutos());
@@ -71,11 +71,11 @@ public class ProdutoController extends HttpServlet {
         produto.setQtdProduto(Integer.parseInt(request.getParameter("QtnProduto")));
         produto.setAvaliacao(Double.parseDouble(request.getParameter("Avaliacao")));
         produto.setDescricao(request.getParameter("Descricao"));
-        String Nome = request.getParameter("Nome");
-        if (Nome == null || Nome.isEmpty()) {
+        String id = request.getParameter("id");
+        if (id == null || id.isEmpty()) {
             dao.addProduto(produto);
         } else {
-            produto.setNome(request.getParameter("Nome"));
+            produto.setId(Integer.parseInt(id));
             dao.updateProduto(produto);
         }
         RequestDispatcher view = request.getRequestDispatcher(LIST_PRODUTO);

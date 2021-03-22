@@ -95,7 +95,7 @@
                                 <td><c:out value="${produto.QtdProduto}" /></td>
                                 <td><c:out value="${produto.Avaliacao}" /></td>
                                 <a href="Alterar_Produto.jsp" class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                                <td><a href="ProdutoController?action=edit&nome="<c:out value="${produto.nome}"/>">Update</a></td>
+                                <td><a href="ProdutoController?action=edit&Id="<c:out value="${produto.id}"/>">Update</a></td>
                                 <td><a href="ProdutoController?action=delete&nome="<c:out value="${produto.nome}"/>">Delete</a></td>
 
                                 </td>

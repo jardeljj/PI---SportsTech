@@ -7,11 +7,11 @@ package model;
 
 /**
  *
- * @author Jardel
+ * @author kinha
  */
-public class Produto {
+public class AlterarProduto {
     
-    private int id;
+     private int id;
     private String nome;
     private String marca;
     private String tamanho;
@@ -92,7 +92,5 @@ public class Produto {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    
-    
     
 }
