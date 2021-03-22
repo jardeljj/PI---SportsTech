@@ -93,6 +93,14 @@ public class Produto {
         this.descricao = descricao;
     }
     
+    @Override
+    public String toString() {
+        return "User [id=" + id + ", nome=" + nome
+                + ", marca=" + marca + ", tamanho=" + tamanho + ", cor="
+                + cor + ", Preco=" + Preco + ", qtdProduto=" + qtdProduto
+                + ", avaliacao=" + avaliacao + ", descricao=" + descricao + "]";
     
+    
+    }
     
 }
