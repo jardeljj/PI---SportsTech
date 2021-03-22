@@ -182,7 +182,7 @@
                         </table>
                     </div>
                     <br>   
-                    <input type="submit" value="Ok" class="btn btn-primary col-2" />
+                    <input type="submit" value="Ok" class="btn btn-primary col-2"/>
                     <a href="produtos.html"><button type="button" class="btn btn-danger col-2">Cancelar</button></a>
                 </form>
             </div>
