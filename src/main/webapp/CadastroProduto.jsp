@@ -123,8 +123,7 @@
                         <label for="nome-por-extenso">Descrição do Produto:</label>
                         <textarea class="form-control" placeholder="Descreva o produto" id="exampleFormControlTextarea1" value="<c:out value="${produto.Descricao}" />" name="Descricao"
                                   rows="3"></textarea >
-                        <input
-            type="submit" value="Submit" />
+                    
                     </div>
                                   
                     <div id="uparquivo" class="form-group">
@@ -182,8 +181,8 @@
                                 </tr>
                         </table>
                     </div>
-                    <br>
-                    <button type="submit" id="btn-submit" value=submit" class="btn btn-primary col-2">OK</button>
+                    <br>   
+                    <input type="submit" value="Ok" class="btn btn-primary col-2" />
                     <a href="produtos.html"><button type="button" class="btn btn-danger col-2">Cancelar</button></a>
                 </form>
             </div>
