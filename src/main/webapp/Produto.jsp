@@ -8,6 +8,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -90,14 +91,14 @@
                             <tbody>
                             <c:forEach items="${produtos}"  var="produto">
                                 <tr>
-                                <td><c:out value="${produto.getid}" /></td>
-                                <td><c:out value="${produto.getNome}" /></td>
-                                <td><c:out value="${produto.getMarca}" /></td>
-                                <td><c:out value="${produto.getCor}" /></td>
-                                <td><c:out value="${produto.getQtdProduto}" /></td>
-                                <td><c:out value="${produto.getAvaliacao}" /></td>
+                                <td><c:out value="${produto.Id}" /></td>
+                                <td><c:out value="${produto.Nome}" /></td>
+                                <td><c:out value="${produto.Marca}" /></td>
+                                <td><c:out value="${produto.Cor}" /></td>
+                                <td><c:out value="${produto.QtdProduto}" /></td>
+                                <td><c:out value="${produto.Avaliacao}" /></td>
                                 <td><a href="ProdutoController?action=edit&Id=" class= "btn btn-primary"><i class="fas fa-edit"></i><c:out value="${produto.id}"/></a></td>
-                                <td><a href="ProdutoController?action=delete&nome="<c:out value="${produto.nome}"/>">Delete</a></td>
+                                <td><a href="ProdutoController?action=delete&nome=" value="<c:out value="${produto.nome}"/>">Delete</a></td>
                                 </tr>
                             </c:forEach>
                             </tbody>

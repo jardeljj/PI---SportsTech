@@ -123,9 +123,9 @@
                         <label for="nome-por-extenso">Descrição do Produto:</label>
                         <textarea class="form-control" placeholder="Descreva o produto" id="exampleFormControlTextarea1" value="<c:out value="${produto.Descricao}" />" name="Descricao"
                                   rows="3"></textarea >
-                    
+
                     </div>
-                                  
+                    <input type="submit" value="submit">
                     <div id="uparquivo" class="form-group">
                         <div id="uparquivo" class="form-group">
                             <label for="exampleFormControlFile1">Caminho do arquivo upload:</label>

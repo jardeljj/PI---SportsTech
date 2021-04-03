@@ -27,3 +27,29 @@ body {
  
 }
 
+.Detalhes_Produto{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.rating-box__title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    font-family: "Source Sans Pro";
+    color: inherit;
+    text-transform: uppercase;
+}
+
+.rating-box__value {
+    display: block;
+    float: left;
+    margin-right: 5px;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 35px;
+    font-family: "Source Sans Pro";
+    color: #333;
+    
+}
