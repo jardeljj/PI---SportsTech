@@ -15,6 +15,15 @@ Cor
 Marca
 Preço
 
+create table login(
+id int auto_increment,
+login varchar(15) not null,
+senha varchar(30) not null,
+primary key(id)
+);
+
+insert into login(login, senha) value ('Admin', aes_encrypt ('Admin','Admin'));
+
 
 create table CadastroCli(
 id int auto_increment,
