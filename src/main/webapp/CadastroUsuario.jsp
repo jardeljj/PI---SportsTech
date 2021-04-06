@@ -1,5 +1,5 @@
-<%-- 
-    Document   : CadastroCliente
+<%--
+    Document   : CadastroUsuario
     Created on : 3 de abr de 2021, 13:08:19
     Author     : Jardel
 --%>
@@ -8,7 +8,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
@@ -21,11 +22,11 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="../Assets/css/Style.css">
-        <title>Cadastro de Cliente</title>
-    </head
-    <%@include file="../Header.jsp" %>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" >
+        <link rel="stylesheet" href="Assets/css/Style.css">
+        <title> Cadastro de Usuário </title>
+    </head>
+    <%@include file="Header.jsp"%>
     <body>
         <form class="form-horizontal">
             <fieldset>
@@ -35,9 +36,9 @@
 
                             <div class="col-md-11 control-label">
                                 <p class="help-block"><h11>*</h11> Campo Obrigatório </p>
-                                
+
                             </div>
-                            
+
                             <div>
                                 <label class="col-md-2 control-label" for="radios">Funcionário <h11>*</h11></label>
                                 <div class="col-md-4"> 
@@ -193,5 +194,5 @@
             </fieldset>
         </form>
     </body>
-    <script src="../Assets/Js/Script.js"></script>
+    <script src="Assets/Js/Script.js"></script>
 </html>
